@@ -1,0 +1,163 @@
+:root {
+  --primary-color: #425b84;
+  --secondary-color: #5b7bb4;
+  --max-width: 1100px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /*Shorthand: font weight, font-size, line-height, font-family */
+  font: normal 1rem/1.5 "Arial", sans-serif;
+  background: var(--primary-color);
+  color: #fff;
+  overflow-x: hidden;
+  padding-bottom: 50px;
+}
+
+/* HEADER */
+#main-header {
+  background: var(--secondary-color);
+  padding: 4rem 0;
+}
+
+.container {
+  max-width: var(--max-width);
+  /* to center items in the container */
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.3rem;
+}
+
+/* TIMELINE */
+#timeline ul {
+  background: var(--primary-color);
+  padding: 50px 0;
+}
+
+/* Create Vertical Line */
+#timeline ul li {
+  list-style: none;
+  /*   we are going to position some of the contents inside as absolute so we want to make sure this parent element has a position relative */
+  position: relative;
+  width: 6px;
+  margin: 0 auto;
+  padding-top: 50px;
+  background: #fff;
+}
+
+/* When writing the html, we where sure to put these items into an additional div rather than directly into the li so we would be able to create the vertical white line */
+/* boxes */
+#timeline ul li div {
+  position: relative;
+  bottom: 0;
+  width: 400px;
+  padding: 1rem;
+  background: var(--secondary-color);
+  transition: all 0.5s ease-in-out;
+/* making the divs invisible until they are visible in the viewport giving them a class of show */
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* Right side divs */
+#timeline ul li:nth-child(odd) div {
+  left: 40px;
+/* setting up slide animation */
+  transform: translate(200px, 0)
+}
+/* Left side divs */
+#timeline ul li:nth-child(even) div {
+  left: -434px;
+/* setting up slide animation */
+  transform: translate(-200px, 0)
+}
+
+/* Show class for JS scroll */
+/* Will take the above code that made the divs offset and bring them back to their original spots at 0. Will also make them visible */
+#timeline ul li.show div {
+  transform: none;
+  visibility: visible;
+  opacity: 1;
+}
+/* will change the middle dots to blue as soon as they are given a class of show */
+#timeline ul li.show:after {
+  background: var(--secondary-color);
+}
+
+/* Dots */
+#timeline ul li:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 25px;
+  height: 25px;
+  background: inherit;
+  transform: translateX(-50%); /* moved it to the center using translate */
+  border-radius: 50%;
+  transition: background 0.5s ease-in-out;
+}
+
+/* Manipulating the border to make small arrows that are pointing at the center dots */
+#timeline div:before {
+  content: "";
+  position: absolute;
+  /*   lines up the arrow with the circle */
+  bottom: 5px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+/* making the arrow by coloring only certain sections of the box */
+/* right side arrows */
+#timeline ul li:nth-child(odd) div:before {
+  left: -15px;
+  border-width: 8px 16px 8px 0;
+  border-color: transparent var(--secondary-color) transparent transparent;
+}
+
+/* Left Side Arrows */
+#timeline ul li:nth-child(even) div:before {
+  right: -15px;
+  border-width: 8px 0 8px 16px;
+  border-color: transparent transparent transparent var(--secondary-color);
+}
+
+/* Media Queries for webpage */
+/* When then the browser is at 900px or less apply these settings */
+@media (max-width: 900px) {
+  #timeline ul li div {
+    width: 250px;
+  }
+  #timeline ul li:nth-child(even) div {
+    left: -284px;
+  }
+}
+
+/* smaller screens line smartphones */
+@media (max-width: 600px) {
+  /*   moved the bar to the left, it was previously set to auto which centered it */
+  #timeline ul li {
+    margin-left: 20px;
+  }
+  #timeline ul li div {
+    width: calc(100vw - 90px);
+  }
+  #timeline ul li:nth-child(even) div {
+    left: 40px;
+  }
+  #timeline ul li:nth-child(even) div:before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent var(--secondary-color) transparent transparent;
+  }
+}
