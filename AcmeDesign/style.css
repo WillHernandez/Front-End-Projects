@@ -1,0 +1,195 @@
+body{
+  /*font-size: 15px;
+    line-height: 1.5; */ /* seperates the text spacing vertically 
+    font-family: Arial, Helvetica, sans-serif; */
+    font: 15px/1.5 Arial, Helvetica, sans-serif; /* shorthand for the 3 above */
+    padding: 0;
+    margin: 0;
+    background-color: #f4f4f4;
+  }
+  
+  /* global */
+  .container{
+    width: 80%; /* content will (dynamically) take up 80% of the width of the page */
+    margin: auto; /* moves all of the content to the middle of the page */
+    overflow: hidden;
+  }
+  
+  ul{
+    margin: 0;
+    padding: 0;
+  }
+  
+  .button1{ /* used to syle any button we will add to our doc. just add classname*/
+    height: 38px;
+    background-color: #e8491d;
+    border: none; /*took away the buttons default border*/
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+  }
+
+  .dark{ /*this styling was created to be added where we see fit*/
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+    background-color: #35424a;
+    color: #fff;
+  }
+  
+  /* header */
+  header{
+    background-color: #35424a;
+    color: #fff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #e8491d 3px solid;
+  }
+  
+  header a{
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+  }
+  
+  header li{
+    float: left; /*makes each item float side by side*/
+    display: inline; /*takes away the bullit points on the ul li's*/
+    padding: 0 20px 0 20px; /* seperates each li from the other*/
+  }
+  
+  header #branding{
+    float: left;
+  }
+  
+  header #branding h1{
+    margin: 0;
+  }
+  
+  header nav{
+    float: right;
+  }
+  
+  header .highlight, header .current a{ /* created the highlight on Acme*/
+    color: #e8491d;
+    font-weight: bold;
+  }
+  
+  header a:hover{
+    color: cccccc;
+    font-weight: bold;
+  }
+  
+  /* showcase */
+  #showcase{
+    min-height: 400px;
+    background: url("https://i.postimg.cc/rwpWQ2gH/showcase.jpg") no-repeat 0 -200px; /*link to the url and some styling. 0 is the diagnol axis, -300 is vertical(picture was moved up)*/
+    text-align: center;
+    color: white;   
+  }
+  
+  #showcase h1{
+    font-size: 55px;
+    margin-top:100px;
+    margin-bottom: 10px; /* an h1's default margin in chrome is 0.67em = 11px so in this case we added margin on the top but took away margin on the bottom of the h1*/
+  }
+  
+  #showcase p{
+    font-size: 20px;
+  }
+  
+  /* newsletter */
+  #newsletter{
+    padding: 15px;
+    color: #fff;
+    background-color: #35424a; 
+  }
+  
+  #newsletter h1{
+    float: left;
+  }
+  
+  #newsletter form{
+    float: right;
+    margin-top: 15px; 
+  }
+  /* shown below we target the input with the type="email" using square brackets[] */
+  #newsletter input[type="email"]{
+    padding: 4px; /* increased overall size of email input field */
+    height: 25px;
+    width: 250px; 
+  }
+  
+  /* boxes */
+  #boxes{
+    margin-top: 20px;
+  }
+  
+  #boxes .box{
+    float: left;
+    width: 30%; /*  both a float and a width value must be present for items to float horizontally */
+    padding: 10px; /* makes space between each box */
+    text-align: center;
+  }
+  
+  #boxes .box img{
+    width: 90px; /*resized the icons, height is automatically calculated*/
+  }
+
+  /* sidebar */
+  #sidebar{
+    float: right;
+    width: 30%;
+    margin-top: 10px;
+  }
+
+  /* main-column */
+  #main-col{
+    float: left;
+    width: 55%;
+  }
+
+  /* services list */
+  #services li{
+  list-style: none;
+  padding: 20px;
+  border: #ccc solid 1px;
+  margin-bottom: 5px;
+  background-color: #e6e6e6;
+}
+
+#sidebar .quote input, #sidebar .quote textarea{
+  width: 90%;
+  padding: 5px;
+}
+  
+  /* footer */
+  footer{
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #e8491d;
+    color: #fff;
+    text-align: center;
+  }
+
+/* Media Queries for different size browsers */
+/* 768px is a great size for mobiles from tablets down to phones*/
+/* when making a querie for a mobile, what you are doing is mostly removing the floats that where applied previously so items will not collide but rather fall into their default place (horizontally) */
+@media(max-width: 768px){ 
+  header #branding,
+  header nav,
+  header nav li,
+  #newletter h1,
+  #newsletter form{
+    float: none;
+    text-align: center;
+    width: 100%;
+  }
+  header{
+    padding-bottom: 20px;
+  }
+  #showcase h1{
+    margin-top: 40px;
+  }
+}
