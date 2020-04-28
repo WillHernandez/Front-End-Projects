@@ -1,0 +1,70 @@
+/* NAVBAR */
+#navbar .logo {
+  float: none;
+  text-align: center;
+}
+
+#navbar ul, #navbar ul li {
+  float: none;
+}
+
+#navbar ul li a {
+  padding: 5px;
+  border-bottom: #444 dotted 1px; 
+}
+
+/* making space in the bottom of the contact navbar in mobile */
+#navbar ul li:nth-child(3) {
+  padding-bottom: 20px;
+}
+
+/* showcase */
+#showcase .showcase-content{
+  padding-top: 50px;
+}
+
+/* Testimonials */
+#testimonials {
+  padding-top: 50px;
+}
+
+/* HOMEINFO */
+#home-info .info-img {
+  display: none;
+}
+
+#home-info .info-content {
+  float: none;
+  width: 100%;
+}
+
+/* BOTTOM BOXES */
+.box {
+  float: none;
+  width: 100%;
+}
+
+/* ABOUT.HTML */
+#about-info .info-left, 
+#about-info .info-right {
+  float: none;
+  width: 100%;
+}
+
+.l-heading {
+  text-align: center;
+}
+
+#about-info .info-right {
+  margin-top:30px;
+}
+
+/* CONTACT.HTML */
+#contact-info .box {
+  border-bottom: 1px dotted #444;
+}
+
+#contact-form .btn {
+  display: block;
+  margin: auto;
+}
