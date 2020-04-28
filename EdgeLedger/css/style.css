@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: 0.75rem 0;
+}
+
+/* Utlilty Classes */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 2rem;
+  overflow: hidden;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: #93cb52;
+}
+
+.btn {
+  display: inline-block;
+  color: #fff;
+  background: #93cb52;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5%;
+}
+.btn:hover {
+  background: #7ab436;
+}
+
+.btn-dark {
+  background: #333;
+  color: #fff;
+}
+
+/* styling to list containers */
+.list {
+  margin: 0.5rem 0;
+}
+
+/* stlying to list items themselves */
+.list li {
+  padding: 0.5rem 0;
+  border-bottom: #444 dotted 1px;
+}
+
+.l-heading {
+   color: #fff;
+   font-size: 3rem;
+   margin-bottom: 0.75rem;
+   line-height: 1.1;
+}
+
+.m-heading {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.1;
+}
+
+.lead {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+/* backgrounds */
+.bg-primary {
+  background: #7ab436;
+  color: #fff;
+}
+.bg-light {
+  background: #fff;
+  color: #333;
+}
+
+.bg-dark {
+  background: #333;
+  color: #fff;
+}
+
+/* padding on y axis */
+.py-1 {padding: 1.0rem 0}
+.py-2 {padding: 2rem 0}
+.py-3 {padding: 3rem 0}
+
+/* padding all around */
+.p-1{padding: 1.5rem}
+.p-2{padding: 2rem}
+.p-3{padding: 3rem}
+
+
+/* NavBar */
+/* how to make a navbar stick to the top of the page and be visible at all times */
+#navbar {
+  display: flex;
+  position: sticky;
+  top: 0;
+  /*  */
+  background: #333;
+  color: #fff;
+  padding: 1rem;
+  /* made space between the logo and the nav */
+  justify-content: space-between;
+  /* the navbar will ALWAYS overlap the items on the page with a lower z-index */
+  z-index: 1;
+}
+
+#navbar ul {
+  display: flex;
+  align-items: center;
+}
+
+#navbar ul li a {
+  color: #fff;
+  /* seperated the items */
+  padding: 0.75rem;
+  margin: 0 0.25rem;
+}
+
+#navbar ul li a:hover {
+  background: #93cb52;
+  border-radius: 5px;
+}
+
+/* ShowCase */
+#showcase {
+  background: #333 url(../img/showcase.jpg) no-repeat center center/cover;
+  height: 100vh;
+  color: #fff;
+}
+
+/* the showcase above has a height nut we must give the container itself below a height also */
+/* justify content on the vertical axis will not work unless this height is specified */
+#showcase .showcase-content {
+  display: flex;
+  /* made vertical again */
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+  /* Overlay on the background img */
+  position: absolute;
+  /* where the overlay will start */
+  /* 64px because that is the exact height of the navbar. 64px from the top of the doc */
+  top: 64px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* a is for alpha and serves as opacity */
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Section | What we do */
+#what .items {
+  display: flex;
+  padding: 1rem;
+}
+
+#what .item {
+  flex: 1;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* styling on icons */
+#what i {
+  background: #93cb52;
+  border-radius: 50%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* SECTION: Who we are */
+/* section will be split in half using flex */
+#who {
+  display: flex;
+}
+
+#who div {
+  flex: 1;
+}
+
+#who .who-img {
+  background: url(../img/people.jpg) no-repeat center center/cover;
+}
+
+/* Section | Clients */
+
+#clients .items {
+  display: flex;
+}
+
+/* Targeting and Resizeing the Xlarge images */
+#clients .items img {
+  display: block;  /* so we can edit the images */
+  margin: auto;
+  width: 60%; /* of the container */
+}
+
+/* Section | Contact */
+#contact {
+  display: flex;
+}
+
+#contact .map, #contact .contact-form {
+  flex: 1;
+}
+
+#contact .contact-form .form-group {
+  margin: 0.75rem;
+}
+
+#contact .contact-form label {
+  display: block;
+}
+
+#contact .form-group input, 
+#contact .form-group textarea {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+#contact .btn {
+  width: 100%;
+  border-radius: 5px;
+  border-style: none;
+}
+
+#contact .btn:hover {
+  background: #444;
+}

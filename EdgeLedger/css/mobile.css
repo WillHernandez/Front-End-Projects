@@ -1,0 +1,43 @@
+
+
+/* making flex-direction: column, Will put the links under the title in the navbar */
+@media(max-width: 500px){
+  #navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #navbar .logo {
+    margin-bottom: 0.8rem;
+  }
+
+  #showcase .showcase-content {
+    top: 130px;
+    margin-top: -2rem;
+  }
+  
+  #what .items {
+    display: block;
+  }
+/* made the image dissapear since it is located on the css doc and not the html. made display:flex a display:block*/
+  #who {
+    display: block;
+  }
+
+  #clients .items img {
+    width: 80%;
+  }
+
+  #clients .items div:last-child {
+    display: none;
+  }
+
+  #contact {
+    flex-direction: column;
+  }
+  /* now we can no longer see the google map. We have to add a height to make it reappear */
+  #contact .map {
+    border-top: 4px solid #333;
+    height: 300px;
+  }
+}
