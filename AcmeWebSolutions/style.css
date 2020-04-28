@@ -1,0 +1,177 @@
+/* CORE STYLES */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #333;
+  color: #fff;
+  font-size: 1.1em;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* applying these styles will resize the XL images to fit inside of their containers */
+img {
+  display: block; /* a display of block will insure that each image is considered a block element and will start on a new line */
+  width: 100%; /* percent of its container */
+  height: auto;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  padding: 1em 0; /* padding of 1 on the top and bottom, 0 left and right */
+}
+
+p {
+  margin: 0; 
+  padding: 1em 0;
+}
+
+.btn {
+  display: inline-block; /* our button was running into the text below it. Inline-block made sure it would take up its entire container */
+  background-color: #333;
+  color: #fff;
+  padding: 8px;
+  border-radius: 3px;
+  text-decoration: none;
+  border: #fff solid 1px;
+}
+
+/* turns the button color reverse on hover, from black with white text to white with black text */
+.btn:hover {
+  background-color: #eaeaea;
+  color: #333;
+}
+
+/* HEADER SHOWCASE */
+/* by setting the minimum height to a larger portion like 450px, it till push all of the below content down. made more space for the showcase alone */
+#showcase {
+  min-height: 450px;
+  color: #fff;
+}
+
+#showcase .bg-image {
+  position: absolute; /* needs to position absolute since it is going to go over the showcase div */
+  background: #333 url("https://i.postimg.cc/jq1F9fYY/code-coding-computer-248515.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background image will not show on webpage until both a width and height are both specified */
+  width: 100%;
+  /* the height is the same as its parent element(above) since it is going on top of it */
+  height: 450px;
+  /* right now we can see the image but it is not in the background. it is on top of our text. We can change this by lowering the z-index on the image and making it secondary to the text. by defaut an items z-index is positive. the higher the z-index, the higher level the item is when they are on top of each other. we want to make this background a negative */
+  z-index: -1;
+  opacity: 0.4;
+}
+
+/* made some space on all sides for the items in the showcase */
+#showcase h1 {
+  padding-top: 100px;
+  padding-bottom: 0;
+}
+/* same styling on multiple ids */
+#showcase .content-wrap,
+#section-a .content-wrap {
+  padding: 0 1.5em;
+}
+
+/* SECTION-A */
+#section-a {
+  background-color: #eaeaea;
+  color: #333;
+  padding-bottom: 2em;
+}
+
+/* SECTION-B */
+/* padding to space out the images */
+#section-b {
+  padding: 2em 1em;
+}
+/* removing the auto padding caused on the left side of the images by the bullet points/ also removing the actual bullet points */
+#section-b ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* editing the the space in between the containers */
+#section-b ul li {
+  margin-bottom: 1em;
+  background-color: #fff;
+  color: #333;
+}
+
+.card-title {
+  font-size: 24px;
+}
+.card-content {
+  padding: 1.5em;
+}
+
+/* SECTION-C */
+#section-c {
+  background-color: #fff;
+  color: #333;
+  padding: 2em;
+}
+
+/* SECTION-D */
+#section-d .box {
+  padding: 2em;
+}
+/* targeting the first box in section-d. used the first-child psuedo class rather than going back to the html and giving it an individual id or classname */
+#section-d .box:first-child {
+  background-color: #2690d4;
+}
+
+/* FOOTER */
+#main-footer {
+  background-color: #000;
+  color: #fff;
+  padding: 1em;
+}
+
+#main-footer a {
+  color: #2690d4;
+  text-decoration: none;
+}
+
+/* MEDIA QUERIES FOR RESIZING */
+/* The media querie below will come into effect only when the browser window is more then 700px */
+@media (min-width : 700px) {
+  /* making section-a into two columns side by side and making them even */
+  #section-a .content-text {
+    columns: 2;
+    column-gap: 2em;
+  }
+  #section-a .content-text p {
+    padding-top: 0;
+  }
+
+  .grid {
+    display: grid; /* set the display to grid for any elements that have this class */
+    /* we are resizing using the grid format as follows. The two corner col will be 1fraction each. the 2 middle cols will resize accordingly */
+    grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
+  }
+  /* we want the below content to start at the 2nd col line and end at the 4th. use dev tools to see*/
+  .content-wrap,
+  #section-b ul {
+    grid-column: 2/4;
+  }
+  /* we want the below content to go span 2 columns each*/
+  .box,
+  #main-footer div {
+    grid-column: span 2;
+  }
+
+  /* setting the cards to a display: flex will automatically make them line up horizontally side by side */
+  #section-b ul {
+    display: flex;
+    justify-content: space-around;
+  }
+  #section-b li{
+    width: 31%;
+  }
+  #section-b li img {
+    height: 15rem;
+  }
+}
