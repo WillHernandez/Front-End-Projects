@@ -1,0 +1,326 @@
+/* This is called a reset style. It takes away any an default styling the item may have. We will add our own*/
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body{
+  background-color: #f5f5f5;
+  color: #67727a;
+  font-family: 'Space Mono', monospace;
+  margin: 0;
+}
+
+h2{
+  color: #f5f5f5;
+  font-size: 250%;
+  font-weight: 700; /* effects the thickness of the text  */
+  text-align: center;
+  padding-top: 2%; /* Make space between the h2's */
+}
+
+
+h3{
+  color: #f5f5f5;
+  font-size: 175%;  
+  font-weight: 400;
+  font-height: 155%;
+  padding: 5% 0%; /* Gave these h3's padding of 5% on top and bottom, 0 left and right */
+}
+
+p{
+  font-family: 'Space Mono', monospace;
+  color: #f5f5f5;
+  font-size: 125%;
+  line-height: 150%;
+  padding: 3%; /* padding on all sides of every p tag on the document */
+  text-indent: 2%;
+  text-align: justify; /* all text will lines will line up evenly and will end evenly  */
+}
+
+img{
+/* pictures will dynamically fit the windows size with the below settings */
+  max-width: 100%; 
+  height: auto;
+  width: auto;
+  margin-bottom: -4px; /* This takes away the default margin so the pictures will have a smaller bottom gap and will merge more seamless */
+
+}
+/* blue color and styling on top header bar */
+header{
+  background-color: #6991ac;
+  width: 100%;
+  height: 86px;
+}
+
+#header-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* top left RD logo. Because the image must be sized first, both a width and height are necessary for it to display. The logo image was added in using the background:url attr */
+#logo{
+  margin: 20px; /* margin all around to move from top left edge */
+  float: left;
+  width: 200px;
+  height: 60px;
+  background: url("https://i.postimg.cc/q7wWg5MT/RD.png") no-repeat center;
+}
+
+/* START NAVIGATION BAR STYLING*/
+nav{
+  float: right;
+  padding: 25px 20px 0px 0px; /*padding only top and right to move away from upper right corner*/
+}
+
+ul{
+  list-style-type: none; /* removes the bullet points from the front of the ul's */
+}
+
+/* accessing the li that is inside of the ul directly */
+nav ul li{
+  font-size: 150%;
+  display: inline-block; /* this will make the li's display inline (side by side) */
+  float: left; /* will not float all the way to the left but to the left of the container */
+  padding: 10px; /* makes space between each list item */
+  font-family: 'Space Mono', monospace;
+}
+
+/* accessing the a tags inside of each list item */
+nav ul li a{
+  color: #f5f5f5;
+  text-decoration: none;
+}
+nav ul li a:hover{ /* hover effect when we go over a header item */
+  color: #c3d7df;
+}
+.current{ /* styled the color of the "home" li in the nav */
+  color: #c3d7df;
+}
+
+/* Menu Icon (burger) Styling Below / Will only show when minimized to mobile view, Otherwise menu will always be visible */
+#menu-icon{
+  display: hidden; /* hidden, we will tell it when to show using a @media querie for mobile view */
+  width: 40px;
+  height: 40px;
+  background: url("https://i.postimg.cc/Zq41bSmH/nav.png") center;
+}
+
+/* this is a hover style for the menu icons inside of that burger */
+a:hover#menu-icon{
+  border-radius: 4px 4px 0px 0px;
+}
+/* END NAVIGATION BAR STYLING */
+
+/* START BANNER STYLING */
+.banner{
+  width: 100%;
+  background-color: #6991ac;
+}
+.banner-inner{
+  max-width: 1100px;
+  margin: 0 auto; /* this well center the image on the page */
+}
+/* END ALL BANNER STYLINGS */
+
+/* START ONE FORTH SECTION -- HTML/CSS/SEO/SOCIAL */
+.one-fourth{
+  width: 25%;
+  float: left; /* if we were to float right, the icons would diplay in reverse order/Social->HMTL */
+  text-align: center;
+}
+/* style each individual section */
+#html{
+  background-color: #F1AA90;
+}
+#css{
+  background-color:#BEB9AD;
+}
+#seo{
+  background-color:#AADCD2;
+}
+#social{
+  background-color:#A2B2C1;
+}
+/* style the fontawesome icons. Styling all the same so target the class name then the i tags themselves */
+.one-fourth i{
+  color: #F0F0F0;
+  font-size: 500%; /* enlarged icons and in turn the container */
+  padding: 13% 0 4% 0; /* padding will make space between the icon itself and the edge of the container. Also enlarged the container*/
+}
+
+/* STYLING All Articles and their ASIDEs */
+/* When styling the articles / asides, only the text not the images will be styled. The images will inherit the (light-blue) color of the container #C3D7DF*/
+/* All articles should float left */
+article{
+  float: left;
+  margin: 0 auto;
+  width: 50%;
+  height: auto;
+}
+/* All asides should float right */
+aside{
+  float: right;
+  margin: 0 auto;
+  width: 50%;
+  height: auto;
+}
+/* Styling first tablet */
+.inner-wrapper{
+  float: left;
+  width: 100%; /* of that left float wrapper */
+  background-color: #C3D7DF;
+}
+#tablet2{
+   background-color: #A2B1C1;
+}
+
+/* Styling second mobile */
+.inner-wrapper-2{
+  float: left; /* does not display any of the properties below without this float left */
+  width: 100%;
+  background-color: #C3D7DF;
+}
+#mobile2{
+  background-color: #BEB9AD;
+}
+
+/* styling third desktop. */ 
+/* Other then the background-color, this desktop has the same styling as the styling as the first desktop which is why the share the same class name */
+#desktop2{
+  background-color: #F1AA90; 
+}
+/* STYLING THE ONE THIRD GOOGLE/MARKETING/CUSTOMERS SECTION */
+  .inner-wrapper-3{
+  float: left;
+  width: 100%;
+  background-color: #AADCD2;/* not necessary but used just so we can see the lettering */
+}
+.one-third{
+  width: 33.3333333%;
+  float: left;
+  text-align: center;
+}
+#google{
+  background-color: #A2B1C1;
+}
+#marketing{
+  background-color: #BEB9AD;
+}
+#customers{
+  background-color: #AADCD2;
+}
+
+/* STYLING THE SMILEY FACE. IT IS ITS OWN SECTION */
+#smiley{
+  background-color: #AADCD2;
+  padding: 0 0 1%;
+  clear: both;
+}
+
+/* START OF FOOTER'S */
+footer{
+  background-color: #6991ac;
+  width: 100%;
+}
+/* this is how we will edit the social media buttons, resize etc */
+.social{
+  list-style-type: none; /* removes the bullet points */
+  text-align: center;
+}
+.social li{
+  display: inline; /* will make all the items float inline(horiztonally) */
+}
+.social i{
+  font-size: 460%; /* enlarged the icons themselves*/
+  margin: 1%; /* made space between each icon */
+  padding: 5%; /* spread the items across the width of the container */
+  color: #C3D7DF;
+}
+/* hover state, changes the color of the items to white once they are hovered over. */
+.social i:hover{
+  color:#f5f5f5;
+}
+
+/* STYLING SECOND AND LAST FOOTER */
+footer.second{
+  border-top: 2px solid #AADCD2;
+  background-color: #544B59;
+  margin: 0;
+}
+.second p{
+  padding: 5px 0 9px 0; /* shrinks the copyright footer box by taking away default padding on some sides and some to others */
+  text-align: center;
+}
+/* THAT CONCLUDES THE FULL WIDTH DESKTOP VERSION OF THE WEBSITE */
+
+/* ALL OF THE CODE BELOW WILL BE @MEDIA QUERIES THAT WILL ADD RESPONSIVENESS WHEN THE WINDOW IS RESIZED/ WIDTH = TABLET/CELL PHONE */
+
+/* whenever the webpage is at a width of 768px or below, this is how we want the webpage to display */
+@media screen and (max-width: 768px){
+  h2{
+    font-size: 150%;
+  }
+  h3{
+    font-size: 125%;
+  }
+  p{
+    font-size: 120%;
+  }
+  header{
+    position: absolute;
+  }
+  #logo{
+    margin: 15px 0 20px -25px;
+    background: url("https://i.postimg.cc/C1KX8szf/RD-mobile.png")no-repeat center;
+  }
+  #menu-icon{
+    display: inline-block;
+  }
+  nav ul, nav:active ul{
+    display: none;
+    z-index: 1000;
+    position: absolute;
+    padding: 20px;
+    background: #6991AC;
+    right: 20px;
+    top: 60px;
+    border: 1px solid #fff;
+    border-radius: 10px 0 10px 10px;
+    width: 50%;
+  }
+  nav:hover ul{
+    display: block;
+  }
+  nav li{
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+  }
+  .banner{
+    padding-top: 86px;
+  }
+  .one-fourth{
+    width: 100%;
+  }
+  .one-fourth i{
+    font-size: 350%;
+    padding: 4% 0 1% 0;
+  }
+  article{
+    width: 100%;
+  }
+  aside{
+    width:100%;
+  }
+  .hand-mobile{
+    display: none;
+  }
+  .one-third{
+    width: 100%;
+  }
+  .social i{
+    font-size: 170%;
+  }
+}
