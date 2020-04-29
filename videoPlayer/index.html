@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom video player</title>
+    <script src="https://kit.fontawesome.com/2aa68ab8e0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/progress.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Custom Video Player</h1>
+    
+    <h3>Link: <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/
+Video_and_audio_APIs" target="_blank">HTML Video Api</a></h3>
+
+    <video src="/vid/Animal - 25094.mp4" id="video" class="screen" poster="img/poster.png"></video>
+
+    <div class="controls">
+        <button class="btn" id="play">
+            <i class="fas fa-hand-point-right fa-2x"></i>
+        </button>
+        <button class="btn" id="stop">
+            <i class="fas fa-hand-paper fa-2x"></i>
+        </button>
+        <input type="range" id="progress" class="progress" min="0" max="100" step="0.1" value="0">
+        <span class="timestamp" id="timestamp">00:00</span>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>
