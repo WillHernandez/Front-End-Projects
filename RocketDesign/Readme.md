@@ -1,2 +1,3 @@
-#RocketDesign
-Beginner html/css project
+## RocketDesign themed website
+
+[link to project](https://will-rocket-design.glitch.me/)
