@@ -1,11 +1,14 @@
 {
   "name": "exchangeratecalculator",
   "version": "1.0.0",
-  "description": "",
+  "description": "Demo Exchange rate calculator",
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Will Hernandez",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^3.2.1"
+  }
 }

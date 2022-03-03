@@ -65,12 +65,6 @@ p {
   text-align: right;
 }
 
-.rate-swap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .rate {
   color: var(--primary-color);
   font-size: 16px;
