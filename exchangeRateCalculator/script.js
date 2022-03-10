@@ -1,6 +1,7 @@
 // could not find a free exchange api that would allow the base code to be changed so USD is the online option at the moment
 const selectOne = document.getElementById('currency-one');
 const amountOne = document.getElementById('amount-one');
+const swap = document.getElementById('btn');
 const selectTwo = document.getElementById('currency-two');
 const amountTwo = document.getElementById('amount-two');
 
@@ -27,5 +28,12 @@ selectOne.addEventListener('change', calculate);
 amountOne.addEventListener('input', calculate);
 selectTwo.addEventListener('change', calculate);
 amountTwo.addEventListener('input', calculate);
+
+swap.addEventListener('click', () => {
+  let temp = selectOne.value;
+  selectOne.value = selectTwo.value;
+  selectTwo.value = temp;
+  calculate();
+})
 
 calculate();
