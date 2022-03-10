@@ -5,15 +5,21 @@ const selectTwo = document.getElementById('currency-two');
 const amountTwo = document.getElementById('amount-two');
 
 const calculate = async () => {
-	const url = `http://api.exchangeratesapi.io/v1/latest?access_key=9393704c9c12219feeefa852cf710538&symbols=USD,AUD,CAD,PLN,MXN&format=1`
-
-	try {
-		const res = await fetch(url);
-		const data = await res.json();
-		let secondRate = data.rates[selectTwo.value];
-		amountTwo.value = String((Number(amountOne.value) * Number(secondRate)).toFixed(2));
-	} catch(err) {
-		console.log(err);
+	if(selectOne.value !== selectTwo.value) {
+		const optToId = {'USD': 1,'EUR': 2,'AUD': 3,'CAD': 4,'MXN': 5,'RUB': 6}
+		try {
+			const optToApiId = optToId[selectOne.value];
+			const url = `http://127.0.0.1:8000/currencies/${optToApiId}`
+			const res = await fetch(url);
+			const data = await res.json();
+			let secondRate = data[selectTwo.value];
+			amountTwo.value = String((Number(amountOne.value) * secondRate).toFixed(2));
+		} catch(err) {
+			console.log(err);
+		}
+	} else {
+		amountTwo.value = String(amountOne.value);	
+		return;
 	}
 }
 
@@ -23,4 +29,3 @@ selectTwo.addEventListener('change', calculate);
 amountTwo.addEventListener('input', calculate);
 
 calculate();
-
